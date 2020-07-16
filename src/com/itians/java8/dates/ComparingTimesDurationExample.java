@@ -1,0 +1,22 @@
+package com.itians.java8.dates;
+
+import java.time.Duration;
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
+
+public class ComparingTimesDurationExample {
+
+    public static void main(String[] args) {
+        LocalTime localTime = LocalTime.of(7, 20);
+        LocalTime localTime1 = LocalTime.of(8, 20);
+
+        Long diff = localTime.until(localTime1, ChronoUnit.MINUTES);
+        System.out.println("Time Diff : " + diff);
+
+        Duration duration = Duration.between(localTime, localTime1);
+        System.out.println("duration : " + duration.toMinutes());
+
+        Duration duration1 = Duration.ofHours(3);
+        System.out.println("duration1 " + duration1.toMinutes());
+    }
+}
